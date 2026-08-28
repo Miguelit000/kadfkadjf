@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { fetchAPI } from '../services/api'; // <-- Ahora importamos nuestra conexión inteligente
 
 export default function ConsultaCliente() {
   const [dato, setDato] = useState('');
@@ -14,10 +15,8 @@ export default function ConsultaCliente() {
     setBuscado(false);
 
     try {
-      // Llamada pura a la API (sin headers de seguridad ni tokens)
-      const res = await fetch(`http://localhost:8080/api/ordenes/consultar?dato=${dato.toUpperCase()}`);
-      if (!res.ok) throw new Error('Error de conexión');
-      const data = await res.json();
+      // Usamos fetchAPI, que lee la variable PUBLIC_API_URL automáticamente en Vercel
+      const data = await fetchAPI(`/ordenes/consultar?dato=${dato.toUpperCase()}`);
       
       setOrdenes(data.reverse()); // Más recientes primero
       setBuscado(true);
