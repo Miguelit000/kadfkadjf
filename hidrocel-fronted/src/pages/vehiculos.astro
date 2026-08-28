@@ -1,0 +1,10 @@
+---
+import DashboardLayout from '../layouts/DashboardLayout.astro';
+import VehiculosManager from '../components/VehiculosManager.jsx';
+---
+
+<DashboardLayout title="Vehículos - Hidrocel">
+  <div className="max-w-7xl mx-auto space-y-6">
+    <VehiculosManager client:load />
+  </div>
+</DashboardLayout>

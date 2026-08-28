@@ -1,0 +1,8 @@
+---
+import DashboardLayout from '../layouts/DashboardLayout.astro';
+import DashboardComponent from '../components/Dashboard.jsx';
+---
+
+<DashboardLayout title="Dashboard - Hidrocel">
+  <DashboardComponent client:only="react" />
+</DashboardLayout>

@@ -1,0 +1,10 @@
+---
+import DashboardLayout from '../../layouts/DashboardLayout.astro';
+import HistorialOrdenes from '../../components/HistorialOrdenes.jsx';
+---
+
+<DashboardLayout title="Historial - Hidrocel">
+  <div className="max-w-7xl mx-auto space-y-6">
+    <HistorialOrdenes client:load />
+  </div>
+</DashboardLayout>

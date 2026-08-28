@@ -1,0 +1,10 @@
+---
+import DashboardLayout from '../layouts/DashboardLayout.astro';
+import SedesManager from '../components/SedesManager.jsx';
+---
+
+<DashboardLayout title="Sucursales - Hidrocel">
+  <div className="max-w-7xl mx-auto">
+    <SedesManager client:load />
+  </div>
+</DashboardLayout>

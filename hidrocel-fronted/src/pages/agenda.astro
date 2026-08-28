@@ -1,0 +1,10 @@
+---
+import DashboardLayout from '../layouts/DashboardLayout.astro';
+import AgendaSede from '../components/AgendaSede.jsx';
+---
+
+<DashboardLayout title="Agenda de Citas - Hidrocel">
+  <div className="max-w-7xl mx-auto h-[85vh]">
+    <AgendaSede client:load />
+  </div>
+</DashboardLayout>

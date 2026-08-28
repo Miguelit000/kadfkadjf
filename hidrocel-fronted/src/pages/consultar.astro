@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ConsultaCliente from '../components/ConsultaCliente.jsx';
+---
+
+<Layout title="Portal de Clientes - Hidrocel">
+  <!-- Aquí usamos el Layout base sin el Sidebar, porque es público -->
+  <ConsultaCliente client:load />
+</Layout>

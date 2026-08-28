@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+import Sidebar from '../components/Sidebar.jsx';
+
+const { title } = Astro.props;
+// Capturamos la URL en la que estamos para que el Sidebar sepa qué botón pintar de azul
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-gray-50 text-gray-900 font-sans antialiased flex h-screen overflow-hidden">
+    
+    <!-- Renderizamos el Sidebar interactivo de React -->
+    <Sidebar client:load currentPath={currentPath} />
+
+    <!-- Área dinámica donde cargará cada página (con scroll propio) -->
+    <div class="flex-1 overflow-y-auto w-full h-full">
+      <!-- Espaciador para móviles, para que el contenido no quede debajo del botón hamburguesa -->
+      <div class="h-16 md:h-0"></div> 
+      <div class="p-4 md:p-8 max-w-7xl mx-auto">
+        <slot />
+      </div>
+    </div>
+    
+  </body>
+</html>

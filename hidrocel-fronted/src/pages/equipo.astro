@@ -1,0 +1,10 @@
+---
+import DashboardLayout from '../layouts/DashboardLayout.astro';
+import EquipoManager from '../components/EquipoManager.jsx';
+---
+
+<DashboardLayout title="Equipo - Hidrocel">
+  <div className="max-w-7xl mx-auto">
+    <EquipoManager client:load />
+  </div>
+</DashboardLayout>

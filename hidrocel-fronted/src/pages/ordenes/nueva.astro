@@ -1,0 +1,9 @@
+---
+import DashboardLayout from '../../layouts/DashboardLayout.astro';
+import NuevaOrdenForm from '../../components/NuevaOrdenForm.jsx';
+---
+
+<DashboardLayout title="Nueva Orden - Hidrocel">
+  <!-- Reutilizamos nuestro layout maestro, ¡así de fácil! -->
+  <NuevaOrdenForm client:load />
+</DashboardLayout>

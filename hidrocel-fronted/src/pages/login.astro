@@ -1,0 +1,16 @@
+---
+// Importamos la estructura base (layout) y nuestro nuevo formulario React
+import Layout from '../layouts/Layout.astro';
+import LoginForm from '../components/LoginForm.jsx';
+---
+
+<Layout title="Iniciar Sesión - Hidrocel">
+  <!-- Tailwind para centrar el formulario en medio de la pantalla -->
+  <main class="flex items-center justify-center min-h-screen bg-gray-50 px-4">
+    
+    <!-- ¡ATENCIÓN A ESTA LÍNEA! -->
+    <!-- client:load le dice a Astro que "despierte" a React en el navegador -->
+    <LoginForm client:load />
+    
+  </main>
+</Layout>

@@ -1,0 +1,20 @@
+---
+// Importamos Tailwind v4 globalmente para toda la aplicación
+import '../styles/global.css';
+
+// Recibimos el título dinámico desde la página que use este Layout
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <slot />
+  </body>
+</html>
